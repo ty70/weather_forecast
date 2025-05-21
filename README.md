@@ -17,7 +17,7 @@ pip install requests
 
 ## 使い方
 ```python
-python scripts/get_weather_forecast --input "130000"  # 東京都
+python scripts/get_weather_forecast.py --input "130000"  # 東京都
 ```
 
 ## サンプル出力
