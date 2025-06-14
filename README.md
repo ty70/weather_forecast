@@ -1,51 +1,58 @@
-# 天気予報取得スクリプト
+# Weather Forecast Retrieval Script
 
-このプログラムは、気象局が提供するJSON形式のデータを利用して、指定した地域の「天候」「気温」「風速」などの予報を表示するPythonスクリプトです。
+This Python script retrieves weather forecasts using JSON data provided by the Japan Meteorological Agency. It displays information such as weather conditions, temperature, and wind speed for a specified region.
 
-## 機能
-- 地域コード(例: 130000 東京都)を指定して天候予報を取得
-- 天候、風向、風速、気温を表示
-- HTTPエラーやデータ解析エラーにも対応
+## Features
 
-## 実行環境
-- Python 3.x
-- ライブラリ: `requests`
+* Retrieves weather forecasts by specifying a region code (e.g., 130000 for Tokyo)
+* Displays weather conditions, wind direction, wind speed, and temperature
+* Handles HTTP errors and data parsing errors gracefully
+
+## Environment
+
+* Python 3.x
+* Required library: `requests`
 
 ```bash
 pip install requests
 ```
 
-## 使い方
-```python
-python scripts/get_weather_forecast.py --input "130000"  # 東京都
+## Usage
+
+```bash
+python scripts/get_weather_forecast.py --input "130000"  # Tokyo
 ```
 
-## サンプル出力
-```
-発表機関: 東京都地方気象台
-報告日時: 2024-05-22T05:00:00+09:00
+## Sample Output
 
-地域: 東京都
-日時: 2024-05-22T06:00:00+09:00
-  天気: 晴れ
-  風: 北風
+```
+Issuing Agency: Tokyo District Meteorological Observatory
+Report Date and Time: 2024-05-22T05:00:00+09:00
+
+Region: Tokyo
+Date and Time: 2024-05-22T06:00:00+09:00
+  Weather: Sunny
+  Wind: North wind
 ...
 ```
 
-## 地域コードの一覧
-気象局API:
+## Region Code List
+
+Japan Meteorological Agency API:
 [https://www.jma.go.jp/bosai/common/const/area.json](https://www.jma.go.jp/bosai/common/const/area.json)
 
-例:
-- 130000: 東京都
-- 270000: 大阪府
-- 010000: 北海道
+Examples:
 
-## 注意
-- 気象局のAPIは非公式の場合があります
-- 温度は日によって有効値が変わることがあります
-- 湿度は利用API内に含まれていないため、このスクリプトは表示に対応していません
+* 130000: Tokyo
+* 270000: Osaka
+* 010000: Hokkaido
 
-## ライセンス
+## Notes
+
+* The Japan Meteorological Agency API may be unofficial
+* Temperature values may vary by day
+* Humidity is not included in the API data and therefore not displayed by this script
+
+## License
+
 [MIT License](./LICENSE)
-
